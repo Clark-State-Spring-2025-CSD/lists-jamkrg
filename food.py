@@ -15,3 +15,23 @@
 #Your entered foods are:
 #[pizza, beef jerkey, rice triangles, steamed chinese bun, fried chicken] 
 #You entered a total of 62 characters
+
+foodsList = []
+
+for i in range(5):
+    foodsList.append(str(input("Enter a food: ")))
+
+charsList = []
+
+for value in foodsList:
+    charsList.append(int(len(value)))
+
+sum = sum(charsList)
+
+print(f"Your entered foods are: \n [{foodsList[0]}, {foodsList[1]}, {foodsList[2]}, {foodsList[3]}, {foodsList[4]}] \n You entered a total of {sum} characters.")
+
+#I'm not sure if this was necessarily the intention, but the function listed below was my first instinct and it ended up giving a count of 82 compared to the 62 that you had gotten
+#because len() counts brackets and commas when it interacts with a string directly. I also listed indices directly in the print string to have the same formatting as your example as
+#well.
+
+#foodsCharacters = len(str(foodsList))

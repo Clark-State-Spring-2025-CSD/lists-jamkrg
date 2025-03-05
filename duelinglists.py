@@ -18,3 +18,42 @@
 #Player two's highest number is 8 at index 1
 #Player one's lowest number is 1 at index 4
 #Player two's lowest number is 1 at index 5
+
+import random
+random.seed()
+
+p1List = []
+p2List = []
+
+for i in range(10):
+    p1List.append(random.randint(1,50))
+
+for i in range(10):
+    p2List.append(random.randint(1,50))
+
+#Test purposes
+#p1List = [5,7,2,9,1,1,3,8,6,9]
+#p2List = [3,8,5,5,8,1,4,7,4,7]
+
+p1Wins = 0
+p2Wins = 0
+#testing
+#ties = 0
+
+for i in range(10):
+    if p1List[i] > p2List[i]:
+        p1Wins += 1
+    elif p1List[i] < p2List[i]:
+        p2Wins += 1
+
+p1Max = p1List.index(max(p1List))
+p1Min = p1List.index(min(p1List))
+p2Max = p2List.index(max(p2List))
+p2Min = p2List.index(min(p2List))
+
+
+print(f"Player One = {p1List} \nPlayer Two = {p2List}")
+print(f"Player One won {p1Wins} times. \nPlayer Two won {p2Wins} times.")
+#print(f"They tied {ties} times.")
+print(f"Player One's highest number is {max(p1List)} at index {p1Max}.\nPlayer Two's highest number is {max(p2List)} at index {p2Max}.")
+print(f"Player One's lowest number is {min(p1List)} at index {p1Min}.\nPlayer Two's lowest number is {min(p2List)} at index {p2Min}.")
